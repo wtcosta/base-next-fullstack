@@ -1,0 +1,16 @@
+Conceitos:
+
+ok 1. o administrador vai clicar em iniciar escala ai os ministerios vai poder comecar a escalar seus voluntarios.
+  ok 1.1 a escala sempre tera como base o mes seguinte ao atual, porem quando o administrador iniciar a escala podera escolher o mes e ano da escala.
+  1.2 o administrador podera ver o status atual da escala, quantos ministerios ja fizeram a escala, e quantos ministerios ainda nao fizeram a escala.
+  1.3 o administrador podera ver o status de cada ministerio, e quantos voluntarios cada ministerio tem na fila de espera.
+  ok 1.4 o administrador podera ver o historico de escalas, e as escalas ja realizadas.
+2. os minsiterios poderam realizar a escala seguindo uma ordem estabelecida em um enum fixo 
+  2.1 os ministerios podem ter 3 status: 
+    2.1.1 AGUARDANDO: o ministerio nao realizou a escala 
+    2.1.2 EM_ANDAMENTO: o ministerio esta realizando a escala 
+    2.1.3 CONCLUIDO: o ministerio ja realizou a escala 
+  2.2 o lider do ministerio tera que clicar em inicar a escala ai poderar ir para uma tela escalar seus voluntarios 
+  2.3 o lider tera que entrar em cada evento e selecionar os voluntarios que irao participar do evento 
+    2.3.1 o sistema devara filtrar os voluntarios que ja estao escalados no mesmo periodo e que nao podem ser escalados novamente 
+  2.4 o lider devera clicar em finalizar a escala para ir para o proximo ministerio da lista com isso consegue analisar se o banco atual me atende? se nao consegue me ajude a fazer as alteracoes necessarias.
