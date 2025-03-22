@@ -61,8 +61,10 @@ export const userService = {
       const hashedPassword = await bcrypt.hash(data.password as string, 10);
 
       return await db.user.create({
-        data: data,
-        password: hashedPassword as never
+        data: {
+          ...data,
+          password: hashedPassword
+        }
       });
     } catch (error) {
       console.error(error);

@@ -1,7 +1,6 @@
 'use server'
 
 import { revalidatePath } from "next/cache";
-import db from "@/services/_db";
 import type { UserStatus, UserRole } from "@prisma/client";
 import { userService } from "@/services/user";
 
@@ -13,17 +12,15 @@ export async function handleCreateUser(formData: FormData) {
   try {
     const roles = JSON.parse(formData.get('roles') as string) as RoleSelection[];
 
-    await db.user.create({
-      data: {
-        name: formData.get('name') as string,
-        email: formData.get('email') as string,
-        password: formData.get('password') as string,
-        status: formData.get('status') as UserStatus,
-        roles: {
-          create: roles.map((r) => ({
-            role: r.role
-          }))
-        }
+    await userService.createUser({
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      password: formData.get('password') as string,
+      status: formData.get('status') as UserStatus,
+      roles: {
+        create: roles.map((r) => ({
+          role: r.role
+        }))
       }
     });
 

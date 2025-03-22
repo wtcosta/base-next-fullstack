@@ -6,6 +6,7 @@ import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
 import db from "./_db";
 import bcrypt from "bcrypt";
+import { userService } from "./user";
 
 // Definindo uma interface para o usuário estendido
 interface ExtendedUser {
@@ -149,12 +150,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 });
 
 export const signUp = async (formData: FormData) => {
+  const name = formData.get("name");
   const email = formData.get("email");
   const password = formData.get("password");
-  await db.user.create({
-    data: {
-      email: email as string,
-      password: password as string,
-    },
-  });
+  await userService.createUser({
+    name: name as string,
+    email: email as string,
+    password: password as string,
+  })
 };
