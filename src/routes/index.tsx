@@ -11,7 +11,7 @@ export const menuItems: NavItemProps[] = [
     icon: <UserCircleIcon />,
     name: "Usuários",
     path: "/users",
-    // restricted: ["SUPERADMIN", "ADMINISTRADOR"],
+    restricted: ["SUPERADMIN", "ADMINISTRADOR"],
   },
   {
     icon: <BoxCubeIcon />,
